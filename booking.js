@@ -18,7 +18,7 @@ for(var i=count;i<num;i++){
     div.style.background=`${Color}`   
 }
     }
-    
+
     // To show individual ticket with randomcolor.
     function generateRandomColor(){
         let maxVal = 0xFFFFFF; // 16777215
@@ -33,7 +33,11 @@ for(var i=count;i<num;i++){
 // Take user input value and book tickets.
 var submit=()=>{
         var input1 = document.getElementById("input1");
-        var input2 = document.getElementById("input2");
+        
+       if(parseInt (input1.value)>7){
+           return;
+       }
+    
     var num=count+parseInt(input1.value)
         //  console.log(num);
         booking(num,generateRandomColor())
